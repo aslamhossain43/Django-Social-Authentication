@@ -1,8 +1,20 @@
  <!-- templates/home.html -->
+{% extends 'base.html' %}
 
-    {% extends 'base.html' %}
+
+ <!--for google-->
+
+
+{% block content %}
+	{% if user.is_authenticated %}
+             <p class="display-4">Hello, {{ user.username }}</p>
+	{% else %}
+             <a class="lead" href="{% url 'login' %}">Log in</a>
+	{% endif %}
+
+<!--for face book-->
+
     {% block title %} Home {% endblock %}
-    {% block content %}
     <div class="row">
         <div class="col-sm-12 mb-3">
             <h4 class="text-center"> Welcome {{ user.username }} </h4>
