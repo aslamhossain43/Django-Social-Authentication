@@ -56,11 +56,6 @@ MIDDLEWARE = [
 AUTHENTICATION_BACKENDS = [
 
         'social_core.backends.facebook.FacebookOAuth2',# for facebook authentication
-        'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
-        'social_core.backends.google.GoogleOpenId',  # for Google authentication
-
-        'social_core.backends.google.GoogleOAuth2',  # for Google authentication
-
         'django.contrib.auth.backends.ModelBackend',
     ]
   #add
@@ -68,8 +63,6 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = 'login'
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='159114385131-1tb6h15gkui8a8alrlf5saviutksklar.apps.googleusercontent.com'  #Paste CLient Key
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'asHPR2wCaaikSSGQVEF8xJe6' #Paste Secret Key
 SOCIAL_AUTH_FACEBOOK_KEY = '413854835831673' # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = '28833a3fa3f2cbc3a6b8655fedaa19fe'  # App Secret
 
@@ -106,14 +99,8 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [                 # add this
         ('picture', 'picture'),
         ('link', 'profile_url'),
     ]
-# for google
-SOCIAL_AUTH_FACEBOOK_KEY = '159114385131-1tb6h15gkui8a8alrlf5saviutksklar.apps.googleusercontent.com'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'asHPR2wCaaikSSGQVEF8xJe6'
-SOCIAL_AUTH_FACEBOOK_SCOPE = ['email', 'groups_access_member_info']
-SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
-    'fields': 'id, name, email',
-    'edges': 'groups'
-}
+
+
 WSGI_APPLICATION = 'social_app.wsgi.application'
 
 
@@ -165,3 +152,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
